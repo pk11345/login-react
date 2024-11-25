@@ -13,29 +13,29 @@ const Login = ({handleLogin}) => {
     }
 
   return (
-    <div className='text-white flex justify-center mt-[200px]'>
-        <div className="loginForm bg-red-500 w-[50%]  p-5 flex  justify-center items-center">
+    <div className='text-white flex justify-center '>
+        <div className="loginForm bg-red-500 w-[50%] mt-[200px]  p-5 flex  justify-center items-center">
             <form onSubmit={SubmitHandler} 
-             className='flex flex-col gap-7'>
-               <div className="email"> <h1 className='text-2xl font-medium'>Enter Your Email Id</h1>
+             className='flex flex-col gap-7 w-[100%] items-center'>
+               <div className="email w-[70%] "> <h1 className='text-xl font-medium'>Enter Your Email Id</h1>
                 <input onChange={(e)=>{
                     // console.log(e.target.value)
                     setEmail(e.target.value)
                 }}
                 value={email}
-                 className='p-2 w-[300px] text-black' 
+                 className='p-2 w-[100%] text-black' 
                  type="email" 
                  placeholder='Enter Your Email' required /></div>
-                <div className="password"> <h1 className='text-2xl font-medium'>Enter Your Password</h1>
+                <div className="password w-[70%]"> <h1 className='text-xl  font-medium'>Enter Your Password</h1>
                 <input onChange={(e)=>{
                     setPassword(e.target.value)
                 }}
                 value={password}
-                className='p-2 w-[300px] text-black' 
+                className='p-2 w-[100%] text-black' 
                 type="password" 
                 placeholder='Enter Your Password' required /></div>
                 <button 
-                 className='bg-black text-red-500 p-2 text-xl font-semibold hover:bg-red-300'>Login</button>
+                 className='bg-black text-red-500 w-[50%] p-2 text-xl font-semibold hover:bg-red-300'>Login</button>
 
             </form>
         </div>
