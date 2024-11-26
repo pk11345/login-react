@@ -1,15 +1,33 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 
 const Login = ({handleLogin}) => {
+    const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+   
     const SubmitHandler =(e)=>{
         e.preventDefault()
-        handleLogin(email,password)
+        // handleLogin(email,password)
         // console.log(email)
         setEmail(" ")
         // console.log(password)
         setPassword("")
+        
+        if(!localStorage.getItem(email)){
+            alert("user not exist")
+           
+        }
+         if(email===JSON.parse(localStorage.getItem(email)) 
+            && password ===JSON.parse(localStorage.getItem(password))){
+            navigate("/UserDashboard")
+    
+        }
+      
+      
+        // console.log(localStorage.getItem(email))
+        
     }
 
   return (
@@ -36,10 +54,11 @@ const Login = ({handleLogin}) => {
                 placeholder='Enter Your Password' required /></div>
                 <button 
                  className='bg-black text-red-500 w-[50%] p-2 text-xl font-semibold hover:bg-red-300'>Login</button>
-
+                 
             </form>
         </div>
     </div>
+    
   )
 }
 
