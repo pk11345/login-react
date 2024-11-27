@@ -16,6 +16,7 @@ const Signup = () => {
             position:'top-center'
         })
     }
+ 
     const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -38,14 +39,15 @@ const Signup = () => {
         }
         else(setTimeout(()=>{
             navigate("/login")
-            {success()}
         },3000))
+       
         localStorage.setItem(name, JSON.stringify(name))
         localStorage.setItem(email,JSON.stringify(email))
         localStorage.setItem(password,JSON.stringify(password))
         console.log(localStorage.getItem(email))
 
-       
+      
+        {success()}
         
     }
 

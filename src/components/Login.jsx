@@ -1,11 +1,23 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ToastContainer } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
-const Login = ({handleLogin}) => {
+const Login = () => {
     const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    const success=()=>{
+        toast.success("login successfull",{
+            position:'top-center'
+        })
+    }
+    const fail =()=>{
+        toast.warn("user does not exist", {
+            position:'top-center'
+        })
+    }
    
     const SubmitHandler =(e)=>{
         e.preventDefault()
@@ -16,21 +28,24 @@ const Login = ({handleLogin}) => {
         setPassword("")
         
         if(!localStorage.getItem(email)){
-            alert("user not exist")
+            // alert("user not exist")
+            {fail()}
            
         }
-         if(email===JSON.parse(localStorage.getItem(email)) 
+         if(email===JSON.parse(localStorage.getItem(email))  
             && password ===JSON.parse(localStorage.getItem(password))){
+                {success()}
+        setTimeout(()=>{
             navigate("/UserDashboard")
+        },3000)
     
         }
-      
-      
-        // console.log(localStorage.getItem(email))
+     
         
     }
 
   return (
+    <>
     <div className='text-white flex justify-center '>
         <div className="loginForm bg-red-500 w-[50%] mt-[200px]  p-5 flex  justify-center items-center">
             <form onSubmit={SubmitHandler} 
@@ -58,7 +73,8 @@ const Login = ({handleLogin}) => {
             </form>
         </div>
     </div>
-    
+    <ToastContainer/>
+    </>
   )
 }
 
