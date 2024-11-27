@@ -43,9 +43,11 @@ const App = () => {
   // }
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
+    {/* {!Route==="/signup"?<Navbar/>:<Signup/> || !Route==="/login"?<Navbar/>:<Login/>} */}
 
     <Routes>
+      <Route path="/" element={<Navbar/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path ="/UserDashboard" element={<UserDashboard/>}/>

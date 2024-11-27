@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -46,6 +46,7 @@ const Login = () => {
 
   return (
     <>
+    <div className="home text-blue-400 text-4xl mt-4 text-center"><Link to="/">Home</Link></div>
     <div className='text-white flex justify-center '>
         <div className="loginForm bg-red-500 w-[50%] mt-[200px]  p-5 flex  justify-center items-center">
             <form onSubmit={SubmitHandler} 
