@@ -48,7 +48,7 @@ const Login = () => {
     <>
     <div className="home text-blue-400 text-4xl mt-4 text-center"><Link to="/">Home</Link></div>
     <div className='text-white flex justify-center '>
-        <div className="loginForm bg-red-500 w-[50%] mt-[200px]  p-5 flex  justify-center items-center">
+        <div className="loginForm bg-red-500 w-[80%] mt-[200px]  p-5 flex  justify-center items-center">
             <form onSubmit={SubmitHandler} 
              className='flex flex-col gap-7 w-[100%] items-center'>
                <div className="email w-[70%] "> <h1 className='text-xl font-medium'>Enter Your Email Id</h1>

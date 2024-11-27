@@ -55,7 +55,7 @@ const Signup = () => {
     <>
     <div className="home text-blue-400 text-4xl mt-4 text-center"><Link to="/">Home</Link></div>
      <div className='text-white flex justify-center '>
-        <div className="loginForm bg-blue-500 w-[50%] mt-[150px]  p-5 flex  justify-center items-center">
+        <div className="loginForm bg-blue-500 w-[80%] mt-[150px]  p-5 flex  justify-center items-center">
             <form onSubmit={SubmitHandler} 
              className='flex flex-col gap-7 w-[100%] items-center'>
 
